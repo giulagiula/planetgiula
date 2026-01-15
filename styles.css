@@ -52,6 +52,7 @@ body {
     margin: 10px 0;
     text-decoration: underline;
     color: #9fc1ff;
+    text-decoration-color: #C1031B;
 }
 .sidebar a[target="content-frame"]:hover {
     display: block;
@@ -122,6 +123,11 @@ a{
     color: #9fc1ff;
     text-decoration: underline;
     text-decoration-color: #C1031B;
+}
+a:hover {
+    font-style: italic;
+    color: #E476C2;
+    text-decoration: none;
 }
 .flower{
     color: #fafad2;
