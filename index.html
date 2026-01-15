@@ -15,6 +15,7 @@
         <a href="drawing.html" target="content-frame">drawing</a>
         <a href="photo-diary.html" target="content-frame">photo diary</a>
         <a href="flora-collection.html" target="content-frame">flora collection</a>
+        <p class="last-updated">last updated: 14/01/2026</p>
     </nav>
     <iframe name="content-frame" class="content" style="display:none;"></iframe>
     <main class="content home">
@@ -39,17 +40,13 @@
 <script>
     const homeContent = document.querySelector('.home');
     const iframe = document.querySelector('iframe');
-    
-    // Links del nav
     document.querySelectorAll('.sidebar a[target="content-frame"]').forEach(link => {
         link.addEventListener('click', () => {
             homeContent.style.display = 'none';
             iframe.style.display = 'block';
         });
     });
-    
-    // Click en título para volver al home
-    document.querySelector('.sidebar .title').addEventListener('click', (e) => {
+        document.querySelector('.sidebar .title').addEventListener('click', (e) => {
         e.preventDefault(); // evita que recargue la página
         homeContent.style.display = 'block';
         iframe.style.display = 'none';
