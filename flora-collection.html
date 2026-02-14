@@ -9,6 +9,75 @@
 <body>
     <h1>flora collection</h1>
     <p class="description">todas las fotos que saco de flores, plantas y árboles</p>   
-    <p>WIP tengo demasiadas</p>
+    <p>click en cualquier lado para que empiecen a aparecer las flores.</p>
+
+    <div id="flower-container"></div>
+    
+    <script>
+        const flowers = [
+    'flora-collection/D4FD6C47-8383-4D8A-9E43-9C6DC8E5692E.jpg',
+    'flora-collection/IMG_0589.jpeg',
+    'flora-collection/IMG_0676.jpeg',
+    'flora-collection/IMG_0906.jpg',
+    'flora-collection/IMG_0908.jpeg',
+    'flora-collection/IMG_0916.jpeg',
+    'flora-collection/IMG_0922.jpeg',
+    'flora-collection/IMG_0923.jpeg',
+    'flora-collection/IMG_0932.jpeg',
+    'flora-collection/IMG_1249.jpeg',
+    'flora-collection/IMG_2042.jpeg',
+    'flora-collection/IMG_2044.jpeg',
+    'flora-collection/IMG_2125.jpeg',
+    'flora-collection/IMG_2188.jpeg',
+    'flora-collection/IMG_2571.jpeg',
+    'flora-collection/IMG_3070.jpeg',
+    'flora-collection/IMG_3418.jpeg',
+    'flora-collection/IMG_3495.jpeg',
+    'flora-collection/IMG_4745.jpeg',
+    'flora-collection/IMG_4946.jpeg',
+    'flora-collection/IMG_5365.jpeg',
+    'flora-collection/IMG_5382.jpeg',
+    'flora-collection/IMG_5875.jpeg',
+    'flora-collection/IMG_7047.jpeg',
+];
+let availableFlowers = [...flowers];
+let flowersDepleted = false;
+
+document.addEventListener('click', function(event) {
+    if (availableFlowers.length === 0) {
+        if (!flowersDepleted) {
+            const message = document.createElement('div');
+            message.textContent = 'no hay más flores por ahora :(';
+            message.style.position = 'fixed';
+            message.style.left = '50%';
+            message.style.top = '50%';
+            message.style.transform = 'translate(-50%, -50%)';
+            message.style.fontSize = '24px';
+            message.style.color = '#583579';
+            message.style.background = '#C1031B';
+            message.style.textAlign = 'center';
+            message.style.pointerEvents = 'none';
+            document.body.appendChild(message);
+            
+            flowersDepleted = true;
+        }
+        return;
+    }
+    
+    const x = event.clientX;
+    const y = event.clientY;
+    
+    const randomIndex = Math.floor(Math.random() * availableFlowers.length);
+    const randomFlower = availableFlowers.splice(randomIndex, 1)[0];
+    
+    const img = document.createElement('img');
+    img.src = randomFlower;
+    img.style.position = 'absolute';
+    img.style.left = x + 'px';
+    img.style.top = y + 'px';
+    img.style.width = '400px';
+    document.body.appendChild(img);
+});
+    </script>
 </body>
 </html>
