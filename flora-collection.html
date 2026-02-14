@@ -72,10 +72,12 @@ document.addEventListener('click', function(event) {
     
     const img = document.createElement('img');
     img.src = randomFlower;
-    img.style.position = 'absolute';
-    img.style.left = x + 'px';
-    img.style.top = y + 'px';
+    img.style.position = 'fixed';
     img.style.width = '300px';
+    const imgX = Math.max(0, Math.min(x - 150, window.innerWidth - 300));
+    const imgY = Math.max(0, Math.min(y - 150, window.innerHeight - 300));
+    img.style.left = imgX + 'px';
+    img.style.top = imgY + 'px';
     document.body.appendChild(img);
 });
     </script>
