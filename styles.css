@@ -54,6 +54,13 @@ body {
     color: #9fc1ff;
     text-decoration-color: #C1031B;
 }
+.sidebar a {
+    display: block;
+    margin: 10px 0;
+}
+.sidebar a.title {
+    display: inline-block;
+}
 .sidebar a[target="content-frame"]:hover {
     display: block;
     margin: 10px 0;
