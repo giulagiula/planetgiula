@@ -156,6 +156,9 @@ a:hover {
     margin-top: 4px;
     margin-bottom: 4px;
 }
+.diary-entry img{
+    width: 200px;
+}
 .last-updated{
     position: absolute;
     bottom: 40px;
@@ -166,7 +169,4 @@ a:hover {
     background-color: #C1031B;
     display: inline-block;
     margin-top: 0;
-}
-.pic{
-    width: 200px;
 }
